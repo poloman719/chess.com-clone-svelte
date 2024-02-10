@@ -1,12 +1,19 @@
 <script>
 	import '../app.css';
-	import SideBarIcon from './SideBarIcon.svelte';
+	import NavItem from './NavItem.svelte';
 </script>
 
-<div
-	class="fixed top-0 left-0 h-screen w-32 m-0 flex flex-col bg-gray-100 text-white shadow-lg"
->
-    <SideBarIcon text="banana" />
+<div class="flex">
+	<div class="h-screen w-40 m-0 flex flex-col bg-gray-100 text-white shadow-lg">
+		<NavItem icon="♟️" title="Play"/>
+		<NavItem icon="🧩" title="Puzzles"/>
+		<NavItem icon="🎓" title="Learn"/>
+		<NavItem icon="🥽" title="Watch"/>
+		<NavItem icon="📰" title="News"/>
+		<NavItem icon="🫂" title="Social"/>
+		<NavItem icon="😀" title="More"/>
+	</div>
+	<div class="bg-gray-200 flex-grow">
+		<slot />
+	</div>
 </div>
-
-<slot />
