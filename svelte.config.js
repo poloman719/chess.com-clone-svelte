@@ -9,7 +9,11 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter()
 	},
-	preprocess: vitePreprocess
+	preprocess: vitePreprocess,
+	onwarn: (warning, handler) => {
+    if (warning.code === 'a11y-click-events-have-key-events') return
+    handler(warning)
+  },
 };
 
 export default config;
