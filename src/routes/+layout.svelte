@@ -2,8 +2,8 @@
 	import '../app.css';
 	import logo from '$lib/logo.png';
 	import NavBar from './NavBar.svelte';
-
-	let search = 'Search';
+	import SearchInput from './SearchInput.svelte';
+	export let data;
 </script>
 
 <div class="flex">
@@ -12,16 +12,13 @@
 			<img src={logo} alt="logo" />
 		</div>
 		<NavBar />
-		<div class="p-3 flex items-center justify-center">
-			<input
-				bind:value={search}
-				on:focusin={() => (search = '')}
-				on:focusout={() => (search = 'Search')}
-				type="text"
-				class="bg-gray-400 w-full border border-gray-500 rounded-sm outline-none p-2 text-xs hover:border-gray-600 focus:border-gray-600"
-			/>
-			<div class="fixed translate-y-7 w-40 h-12 bg-gray-25"></div>
+		<SearchInput users={data.users} />
+		<div class="p-3 flex flex-col gap-3">
+			<button class="bg-gray-400 w-full p-2 rounded-md hover:bg-gray-500">Sign Up</button>
+			<button class="bg-green-400 w-full p-2 rounded-md hover:bg-green-500">Log In</button>
 		</div>
+		<button class="flex items-center justify-center p-2 text-xs text-gray-600 hover:bg-gray-50 hover:text-white">English</button>
+		<button class="flex items-center justify-center p-2 text-xs text-gray-600 hover:bg-gray-50 hover:text-white">Help</button>
 	</div>
 	<div class="bg-gray-200 flex-grow">
 		<slot />
