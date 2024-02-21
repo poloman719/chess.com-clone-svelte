@@ -4,7 +4,6 @@ const URL = 'https://api.api-ninjas.com/v1/babynames';
 export async function load() {
 	const res = await fetch(URL, { headers: { 'X-Api-Key': API_KEY } });
 	const data = await res.json();
-	console.log(data);
 
 	return {
 		users: data

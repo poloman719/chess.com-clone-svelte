@@ -18,7 +18,7 @@
 			focused = false;
 		}}
 		type="text"
-		class="bg-gray-400 w-full border border-gray-500 rounded-sm outline-none p-2 hover:border-gray-600 focus:border-gray-600"
+		class="bg-gray-400 w-full border border-gray-500 rounded-sm outline-none p-2 hover:border-gray-700 focus:border-gray-700"
 	/>
 	{#if search !== '' && search !== 'Search' && focused}
 		<div>
